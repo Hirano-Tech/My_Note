@@ -1,5 +1,5 @@
 class ApplicationController < ActionController::Base
   def index
-    @post = Post.all
+    @posts = Post.all
   end
 end
