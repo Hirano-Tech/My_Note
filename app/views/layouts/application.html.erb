@@ -1,14 +1,22 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>MyNote</title>
+    <meta charset="utf-8">
+
+    <title>My Note</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
+    <meta name="viewport" content="width=devise-width, initial-scale=1.0">
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
       <!-- "stylesheet_link_tag"メソッドを使用すると、"app/assets/stylesheets/"ディレクトリの中にあるスタイルシートファイルを読み込んでいる。 -->
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
+
+  <header>
+    <%= link_to root_path do %>
+      <h1>My Note</h1>
+    <% end %>
+  </header>
 
   <body>
     <%= yield %>

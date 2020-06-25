@@ -1,0 +1,16 @@
+<div id="wrapper">
+  <div id="contents">
+    <% @posts.each do |post| %>
+      <%= link_to root_path do %>
+        <div class="content">
+          <div class="content__title">
+            <%= post.title%>
+          </div>
+          <div class="content__date">
+            [投稿日]：<%= post.created_at%>
+          </div>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+</div>
