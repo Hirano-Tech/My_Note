@@ -1,4 +1,16 @@
 <div id="wrapper">
+  <div id="content_form">
+    <h2>【新規投稿】</h2>
+
+    <%= form_with model: @post, url: application_index_path, local: true do |form| %>
+      <%= form.label :title, "● タイトル：" %>
+      <%= form.text_field :title %><br>
+      <%= form.label :content, "● 内容：" %>
+      <%= form.text_area :content %><br>
+      <%= form.submit '投稿する' %>
+    <% end %>
+  </div>
+
   <div id="contents">
     <% @posts.each do |post| %>
       <%= link_to root_path do %>
