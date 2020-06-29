@@ -12,13 +12,20 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
-  <body>
-    <header>
-      <%= link_to root_path do %>
-        <h1>My Note</h1>
-      <% end %>
-    </header>
+  <header>
+    <%= link_to root_path do %>
+      <h1>My Note</h1>
+    <% end %>
 
+    <% if user_signed_in? %>
+      <% else %>
+      <%= link_to new_user_session_path do %>
+        <p>ログイン</p>
+      <% end %>
+    <% end %>
+  </header>
+
+  <body>
     <%= yield %>
   </body>
 </html>
