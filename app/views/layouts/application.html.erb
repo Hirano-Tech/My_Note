@@ -12,13 +12,13 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
-  <header>
-    <%= link_to root_path do %>
-      <h1>My Note</h1>
-    <% end %>
-  </header>
-
   <body>
+    <header>
+      <%= link_to root_path do %>
+        <h1>My Note</h1>
+      <% end %>
+    </header>
+
     <%= yield %>
   </body>
 </html>

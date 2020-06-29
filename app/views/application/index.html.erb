@@ -1,16 +1,28 @@
 <div id="wrapper">
+  <div id="content_form">
+    <h2>【新規投稿】</h2>
+
+    <%= form_with model: @post, url: application_index_path, local: true do |form| %>
+      <%= form.text_field :title, id: 'content_form__title', placeholder: 'タイトル' %><br>
+      <%= form.text_area :content, id: 'content_form__content', placeholder: '内容を記入してください。' %><br>
+      <%= form.submit '投稿する', id: 'content_form__submit' %>
+    <% end %>
+  </div>
+
   <div id="contents">
     <% @posts.each do |post| %>
-      <%= link_to root_path do %>
-        <div class="content">
-          <div class="content__title">
-            <%= post.title%>
-          </div>
-          <div class="content__date">
-            [投稿日]：<%= post.created_at%>
-          </div>
+      <div id="content">
+        <div id="content__title">
+          <%= post.title%>
+          <%= link_to "削除", application_path(post.id), method: :delete, id: 'content__title--delete' %>
         </div>
-      <% end %>
+        <div id="content__date">
+          [投稿日]：<%= post.created_at%>
+        </div>
+        <div id="content__content">
+          <%= simple_format post.content%>
+        </div>
+      </div>
     <% end %>
   </div>
 </div>
