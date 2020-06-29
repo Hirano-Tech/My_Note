@@ -18,6 +18,9 @@
     <% end %>
 
     <% if user_signed_in? %>
+      <%= link_to destroy_user_session_path, method: :delete do %>
+        <p>ログアウト</p>
+      <% end %>
       <% else %>
       <%= link_to new_user_session_path do %>
         <p>ログイン</p>
